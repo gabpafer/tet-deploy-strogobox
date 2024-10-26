@@ -1,0 +1,1392 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh; /* Altura mínima da página inteira */
+  display: flex;
+  flex-direction: column; /* Dispor conteúdo em coluna */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  max-width: 414px;
+  background-color: #fff;
+  height: 100vh;
+  flex: 1;
+  padding-bottom: 60px;
+}
+/* pages controls */
+.container .page-home {
+  display: none;
+}
+.container .page-likes {
+  display: none;
+}
+.container .page-coupons {
+  display: none;
+}
+.container .page-order {
+  display: none;
+}
+
+/* Toast Notifications */
+/* Estilos para a notificação */
+.toast-notification {
+  position: fixed;
+  top: -100px; /* Inicialmente, fora da tela, acima */
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px); /* Centraliza horizontalmente e esconde acima da tela */
+  width: 90%;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 30px; /* Bordas bem arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animação suave */
+}
+
+.toast-notification.show {
+  top: 3px; /* Posição final: 3px do topo da tela */
+  transform: translateX(-50%) translateY(0); /* Mantém a centralização e traz para a posição correta */
+  opacity: 1;
+}
+
+.toast-success {
+  background-color: #fff;
+  border: 1px solid green;
+  color: green;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.455), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toast-error {
+  background-color: #fff;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.455), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background-color: #fff;
+  width: 100%;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-top: 15px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.menu-btn img {
+  width: 50px;
+  height: auto;
+  padding-top: 10px;
+}
+
+/* Indicador de status do restaurante */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: limegreen;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    background-color: rgba(128, 128, 128, 0.182);
+  }
+  50% {
+    background-color: limegreen;
+  }
+}
+
+.location, .location span {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.location span:nth-child(2) {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 250px;
+  background-color: #fff;
+}
+
+.banner .background-img {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  opacity: 90%;
+  background-size: cover;
+}
+
+.banner .foreground-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  background-color: #00000063;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.banner .foreground-img {
+  width: 60%;
+  opacity: 30%;
+  background-size: cover;
+}
+
+.banner-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  width: 70%;
+}
+
+.banner-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.banner-content p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 10px 20px;
+  background-color: hsl(0, 70%, 53%);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Rounded Carroussel Icons Bar */
+.rounded-section {
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 20px;
+}
+.rounded-section .tabs-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(90deg, #fff 50%, transparent);
+}
+.rounded-section .tabs-box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(-90deg, #fff 50%, transparent);
+}
+.rounded-section .tabs-box {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: grab;
+  padding: 0 15px;
+}
+.rounded-section .tabs-box::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-box li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  width: 80px;
+  height: auto;
+}
+.tabs-box .tab {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tabs-box .tab img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.tabs-box .tab p {
+  font-size: 0.65rem;
+  font-weight: 400;
+  max-width: 90px;
+  height: 40px;
+  white-space: normal;
+  color: #555;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Search Section */
+.search-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3px 7px 3px 7px;
+  /* background-color: hsl(0, 70%, 53%); */
+  border-radius: 0 30px 30px 0;
+  margin: 0;
+}
+.search-section i {
+  font-size: 1.2rem;
+  color: hsl(0, 70%, 53%);
+  transform: translateX(50%);
+  transform: rotateZ(90deg);
+}
+
+.search-icon,
+.search-btn {
+  font-size: 24px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  all: unset;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 3px 10px;
+  border-radius: 30px;
+  border: 2px solid hsl(0, 70%, 53%);;
+  font-size: 1.2rem;
+  max-width: 90%;
+  color: #555;
+  background-color: #94949419;
+}
+.search-section input::placeholder {
+  font-size: 1.2rem;
+  opacity: 30%;
+}
+.search-section input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.empty-message{
+  margin-top: 10px;
+}
+
+/* Food List */
+.food-list {
+  padding: 0 10px;
+  position: relative; /* Necessário para o posicionamento absoluto do conteúdo dentro dela */
+  min-height: 200px;  /* Defina uma altura mínima apropriada */
+}
+
+.foodtype-header-section {
+  margin-top: 5px;
+  font-size: 1rem;
+  padding: 15px;
+  padding-left: 5px;
+}
+
+.food-item {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.food-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin: auto 10px;
+}
+
+.food-details {
+  padding: 10px;
+  flex: 1;
+}
+
+.food-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.food-details p {
+  font-size: 14px;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita a 3 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.food-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.food-footer .price {
+  font-size: 18px;
+  color: green;
+}
+
+.food-footer .Old {
+  font-size: 12px;
+  color: grey;
+  text-decoration: line-through;
+}
+
+.food-footer .pricePromo {
+  display: none;
+  font-size: 18px;
+  color: green;
+  font-weight: 500;
+}
+
+.food-footer .inPromo {
+  display: inline;
+}
+
+.icons {
+  display: flex;
+  gap: 25px;
+}
+.footer-nav .active-icon {
+  color: rgb(249, 47, 47); /* Cor do ícone ativo */
+}
+
+.fav-btn,
+.add-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+.icon-active-fav {
+  color: rgb(249, 47, 47);
+}
+.icon-active-add {
+  color: green;
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fav-btn i {
+  transition: color 0.3s ease;
+}
+
+.fav-btn i.pop-effect {
+  animation: pop 0.3s ease-in-out;
+}
+@keyframes scale-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-btn {
+  position: relative;
+}
+
+.item-count {
+  z-index: 100;
+  position: absolute;
+  top: -10px; /* Ajuste conforme necessário */
+  right: -10px; /* Ajuste conforme necessário */
+  background-color: hsl(0, 70%, 53%);
+  color: white; /* Cor do texto */
+  border-radius: 50%;
+  width: 15px; /* Tamanho da bolinha */
+  height: 15px; /* Tamanho da bolinha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Tamanho da fonte */
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.add-btn i {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.add-btn i.transform-effect {
+  color: #28a745; /* Cor verde */
+  animation: scale-up 0.3s ease-in-out;
+}
+
+/* popup dishes */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#popup-dish-img {
+  align-self: center;
+  width: 70%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#popup-dish-title {
+  margin-top: 15px;
+  font-size: 22px;
+  text-align: start;
+}
+
+.popup-description-container {
+  flex: 1;
+  overflow-y: auto;
+  margin: 15px 0;
+}
+
+.popup-description-container p {
+  font-size: 16px;
+  color: #333;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------ */
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price.Old {
+  font-size: 14px;
+  color: grey;
+  text-decoration: line-through;
+}
+
+.pricePromo {
+  font-size: 18px;
+  color: green;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.fav-btn, .add-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+.icon-active-fav {
+  color: rgb(249, 47, 47);
+}
+
+
+/* ---------LIKES------------ */
+.page-likes .main-sec .title-wrap {
+  width: 100%;
+}
+.page-likes .main-sec .title-wrap h1 {
+  margin-top: 30px;
+  text-align: center;
+  color: #555;
+}
+
+/* ---------Coupons------------ */
+.page-coupons .main-sec .title-wrap {
+  width: 100%;
+}
+
+.page-coupons .main-sec .title-wrap h1 {
+  margin-top: 30px;
+  text-align: center;
+  color: #555;
+}
+
+.coupon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px 5px;
+}
+
+.coupon-wrap {
+  margin: 10px;
+  margin-top: 20px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.coupon {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 10px;
+  border: 2px dashed #d3d3d3;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.coupon.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.coupon-front,
+.coupon-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.coupon-front {
+  display: flex;
+}
+
+.coupon-image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.coupon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coupon-content {
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coupon-content .text-wrap {
+  height: 90%;
+}
+
+.coupon-content h2 {
+  font-size: 14px;
+  color: #333;
+}
+
+.coupon-content p {
+  font-size: 14px;
+  color: #777;
+}
+.coupon-content small{
+  font-size: 10px;
+}
+
+.coupon-code-wrap {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+.coupon-code-wrap small {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.coupon-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.coupon-back h1 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.coupon-back p {
+  font-size: 12px;
+  color: #777;
+}
+
+.coupon-back button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.coupon-back button:hover {
+  background-color: #1ab152;
+}
+
+/* --------- ORDER ------------ */
+.page-order {
+  width: 100%;
+  background-color: #fff;
+}
+.page-order .main-sec .title-wrap {
+  width: 100%;
+}
+.page-order .main-sec .title-wrap h1 {
+  margin-top: 30px;
+  text-align: center;
+  color: #555;
+}
+
+.order-sumary {
+  margin: 20px;
+  border: 2px solid #555;
+  background-color: #f4f4f4;
+  min-height: 50vh;
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+}
+.order-sumary .header-order {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+  border-bottom: 1px dashed #555;
+}
+.order-sumary ul {
+  list-style: none;
+  padding: 5px;
+}
+.order-sumary li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.8px dashed #555;
+  padding: 5px 0;
+  flex-wrap: nowrap;
+}
+.order-sumary li:last-child {
+  border-bottom: none;
+}
+.order-sumary li h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-left: 5px;
+}
+.order-sumary li p {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.order-sumary .total-order {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.8px dashed #555;
+  padding: 5px 3px;
+  font-weight: 400;
+  padding: 15px;
+}
+
+/* dinamico */
+
+.order-sumary .item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.order-sumary .item-name {
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.order-sumary .item-price {
+  margin: 0;
+  font-size: 1rem;
+}
+/* --- */
+/* coupon area */
+.coupon-area {
+  margin: 20px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  border-radius: 15px;
+  background-color: rgba(230, 230, 230, 0.953);
+}
+.coupon-area .add {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.coupon-area h2 {
+  font-size: 0.8em;
+}
+
+.coupon-area .input-area {
+  display: flex;
+  gap: 5px;
+}
+.coupon-area input {
+  font-size: .8em;
+  font-weight: 600;
+  color: rgb(177, 0, 0);
+  padding: 5px;
+  width: 100px;
+  height: 40px;
+}
+.coupon-area input::placeholder {
+  font-size: 0.7rem;
+}
+.coupon-area button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  padding: 5px;
+  width: 50px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: hsl(0, 70%, 53%);
+}
+
+.applied-coupon-message {
+  font-size: 0.7rem;
+}
+/* --- */
+/* .final-advise {
+  text-align: center;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+} */
+
+.send-order-area {
+  width: 100%;
+  /* background-color: rgba(230, 230, 230, 0.953); */
+}
+.send-order-area .order-controls-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+  width: 100%;
+  margin: auto;
+}
+.send-order-area .order-controls-wrap .cancel-button {
+  /* margin: auto; */
+  cursor: pointer;
+  color: #555;
+  font-size: 0.8rem;
+}
+.send-order-area .order-controls-wrap .wpp-button {
+  /* width: 50%; */
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: hsl(0, 70%, 53%);
+  border: 1px solid rgb(194, 209, 194);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
+/* Popup confirm */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 85%;
+}
+
+.popup-gif {
+  width: 100px; /* Ajuste para um tamanho menor */
+  height: auto; /* Mantém a proporção do GIF */
+  margin-bottom: 10px; /* Espaço entre o GIF e o texto */
+}
+
+.popup-inputs{
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+.popup-inputs #cutlery-wrap {
+  width: 10%;
+  display: flex;
+  justify-content: flex-start; /* Alinhar o label e o checkbox ao início */
+  align-items: center; /* Alinhar verticalmente na mesma linha */
+  white-space: nowrap; /* Evitar que o label e o checkbox quebrem a linha */
+  gap: 5px;
+}
+.popup-inputs .needs-cutlery {
+  margin-left: 0;
+}
+.popup-inputs #needs-cutlery, #save-customer-data{
+  transform: scale(.7); 
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid hsl(0, 70%, 53%); /* Estilo da borda do checkbox */
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.popup-inputs #needs-cutlery:checked {
+  background-color: hsl(0, 70%, 53%); /* Cor de fundo quando estiver marcado */
+  border-color: hsl(0, 70%, 53%); /* Ajusta a cor da borda para combinar com o fundo */
+}
+.popup-inputs #save-customer-data:checked {
+  background-color: hsl(0, 70%, 53%); /* Cor de fundo quando estiver marcado */
+  border-color: hsl(0, 70%, 53%); /* Ajusta a cor da borda para combinar com o fundo */
+}
+.popup-inputs #needs-cutlery:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.popup-inputs #save-customer-data:checked::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.popup-inputs label{
+  font-size: .8rem;
+}
+.customer-data-div{
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.save-customer-data-label{
+  display: flex;
+  align-items: center;
+}
+.popup-inputs input, textarea{
+  border: 2px solid hsl(0, 70%, 53%);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.popup-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.popup-actions .popup-confirm, .popup-update-yes {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: hsl(0, 70%, 53%);
+  color: white;
+}
+.popup-actions .popup-cancel, .popup-update-no {
+  font-size: 0.8rem;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.popup-update-no{
+  background-color: transparent;
+  border: 1px solid #555;
+  padding: 5px 12px;
+}
+
+.popup-confirm {
+  background-color: #4caf50;
+  color: white;
+}
+
+.popup-cancel {
+  background-color: transparent;
+  color: black;
+}
+
+/* popup pay */
+/* Estilos para o overlay do popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Estilos para o container do popup */
+.popup-pay {
+  background-color: #ffffff; /* Fundo branco */
+  padding: 25px;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Sombra */
+  text-align: center;
+  width: 340px; /* Ajuste para caber melhor no design */
+  max-width: 90%;
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  position: relative;
+}
+
+.popup-pay img{
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+/* Estilos para o título */
+.popup-pay p {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Estilos para os botões */
+.popup-pay-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espaçamento entre botões */
+  margin-top: 15px;
+}
+
+/* Estilo padrão dos botões */
+.popup-pay-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease; /* Suave transição de cor */
+}
+
+/* Botão PIX */
+.popup-pay .pay-pix {
+  background-color: #4caf50; /* Verde */
+  color: white;
+}
+
+.popup-pay .pay-pix:hover {
+  background-color: #45a049; /* Verde escuro no hover */
+}
+
+/* Botão Pagamento na Entrega */
+.popup-pay .pay-cash {
+  background-color: #f44336; /* Vermelho */
+  color: white;
+}
+
+.popup-pay .pay-cash:hover {
+  background-color: #e53935; /* Vermelho escuro no hover */
+}
+
+/* Botão Confirmar */
+.popup-pay .popup-pay-confirm {
+  background-color: #008cba; /* Azul */
+  color: white;
+}
+
+.popup-pay .popup-pay-confirm:hover {
+  background-color: #007bb5; /* Azul escuro no hover */
+}
+
+/* Botão Cancelar */
+.popup-pay .popup-pay-cancel {
+  background-color: #ccc; /* Cinza claro */
+  color: black;
+}
+
+.popup-pay .popup-pay-cancel:hover {
+  background-color: #b3b3b3; /* Cinza mais escuro no hover */
+}
+
+.popup-pay p:nth-child(4){
+  background-color: #d3d3d353;
+  padding: 15px;
+  border: 1px dashed #333;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.popup-pay small{
+  font-size: .6rem;
+  font-weight: 200;
+  text-decoration: underline;
+}
+
+/* Container do código PIX */
+.pix-code-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Input do código PIX */
+.pix-code-container input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: #f5f5f5; /* Cor de fundo leve */
+}
+
+/* Botão de copiar código PIX */
+.pix-code-container button {
+  padding: 7px 12px;
+  background-color: #008cba; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pix-code-container button:hover {
+  background-color: #007bb5; /* Azul escuro no hover */
+}
+
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(85, 85, 85, 0.3); /* Define a cor #555 com opacidade */
+  border-radius: 50%;
+  border-top-color: #555; /* Cor sólida para o topo */
+  animation: spin 1s ease-in-out infinite; /* Animação de rotação */
+  margin-right: 8px; /* Espaço entre o spinner e o texto */
+}
+.loading-spinner-waiting {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(85, 85, 85, 0.3); /* Define a cor #555 com opacidade */
+  border-radius: 50%;
+  border-top-color: #555; /* Cor sólida para o topo */
+  animation: spin 1s ease-in-out infinite; /* Animação de rotação */
+  margin-bottom: 8px; /* Espaço entre o spinner e o texto */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg); /* Faz o círculo girar */
+  }
+}
+
+
+/* Estilo para centralizar o GIF dentro da order-sumary */
+/* Estilo para centralizar o GIF dentro da order-sumary */
+.gif-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  height: 100%; /* Preencher toda a section */
+}
+
+.waiting-gif-image {
+  max-width: 300px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 50%;
+}
+
+.final-msg {
+  text-align: center;
+  padding: 20px;
+  max-width: 70%;
+  font-size: 0.7em;
+}
+
+.gif-check {
+  /* margin-top: 5px; */
+  background-color: rgb(6, 220, 6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gif-close-btn {
+  background-color: transparent;
+  color: grey;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------- */
+
+/* Footer Navigation */
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.footer-nav button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #949494;
+}
+
+/* spinner global */
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner-circle {
+  width: 50px;
+  height: 50px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #db3434;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Centralizando em telas maiores */
+@media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+  }
+}

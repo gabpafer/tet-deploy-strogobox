@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Strogobox - Sepetiba | BiteHub</title>
+    <link rel="stylesheet" href="css/Model-Menu.css" />
+  </head>
+  <body>
+    <div class="container" data-restId="0001">
+      <!-- Contêiner para notificações -->
+      <div id="toast-container"></div>
+      <!------------------PAGE - HOME -------- -->
+      <section class="page-home" data-page="page-home">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-top">
+            <a class="menu-btn" href="#"
+              ><img src="/assets/logo-beta-white.png" alt="mini-logo"
+            /></a>
+            <p class="location">
+              <span class="status-dot"></span><span>StrogoBox</span>📍 Sepetiba,
+              Rio de Janeiro - RJ
+            </p>
+            <div class="user-avatar">
+              <a
+                href="#home"
+                class="avatar-btn"
+                onclick="navigateTo('home'); return false;"
+                ><img
+                  src="assets/rest-assets/rest-logos/strogobox.png"
+                  alt="User Avatar"
+              /></a>
+            </div>
+          </div>
+          <div class="banner">
+            <img
+              class="background-img"
+              src="assets/rest-assets/strogo.jpg"
+              alt="Banner"
+            />
+            <div class="foreground-img-wrap">
+              <img
+                class="foreground-img"
+                src="assets/rest-assets/rest-logos/strogobox.png"
+                alt="Banner"
+              />
+            </div>
+            <div class="banner-content">
+              <h1>Um delicioso Strogonoff, que vem em uma caixa.</h1>
+              <p>Clássico, prático, gostoso. Peça seu Strogobox.</p>
+              <a
+                href="#coupons"
+                class="explore-btn"
+                onclick="navigateTo('coupons'); return false;"
+                >Cupons</a
+              >
+            </div>
+          </div>
+        </header>
+
+        <!-- Rounded Carroussel Icons Bar -->
+        <section class="rounded-section">
+          <ul class="tabs-box">
+            <!-- <li class="tab">
+              <button>
+                <img src="assets/rest-assets/icons/petiscos-icon.png" alt="User Avatar" />
+                <p>Petiscos</p>
+              </button>
+            </li> -->
+            <li class="tab">
+              <button>
+                <img
+                  src="assets/rest-assets/icons/principal-icon.png"
+                  alt="User Avatar"
+                />
+                <p>Frangos</p>
+              </button>
+            </li>
+            <li class="tab">
+              <button>
+                <img
+                  src="assets/rest-assets/icons/steak-icon.png"
+                  alt="User Avatar"
+                />
+                <p>Carnes</p>
+              </button>
+            </li>
+            <!-- <li class="tab">
+              <button>
+                <img src="assets/rest-assets/icons/pizza-icon.png" alt="User Avatar" />
+                <p>Pizzas</p>
+              </button>
+            </li> -->
+            <li class="tab">
+              <button>
+                <img
+                  src="assets/rest-assets/icons/acompanhamentos-icon.png"
+                  alt="User Avatar"
+                />
+                <p>Extras</p>
+              </button>
+            </li>
+            <!-- <li class="tab">
+              <button>
+                <img src="assets/rest-assets/icons/sobremesa-icon.png" alt="User Avatar" />
+                <p>Sobremesas</p>
+              </button>
+            </li> -->
+            <li class="tab">
+              <button>
+                <img
+                  src="assets/rest-assets/icons/drink-icon.png"
+                  alt="User Avatar"
+                />
+                <p>Bebidas</p>
+              </button>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-section">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="E aí, qual sua fome de hoje?"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </section>
+
+        <!-- Food List -->
+        <section class="food-list">
+          <section class="StrogoBox">
+            <!-- Adicionar aqui classe e abaixo Header2 -->
+            <h2 class="foodtype-header-section">StrogoBox</h2>
+            <article
+              class="food-item"
+              data-id="clas-strogo-f"
+              data-tags="frangos strogonoff strogobox classico"
+            >
+              <img
+                src="assets/rest-assets/thumb-frango.png"
+                alt="Strogobox Frango"
+              />
+              <div class="food-details">
+                <h3>Clássico Strogobox Frango</h3>
+                <p>
+                  Delicie-se com nosso clássico
+                  <strong>Strogobox de Frango</strong>, uma combinação
+                  irresistível de suculentos pedaços de frango cozidos à
+                  perfeição, mergulhados em um molho cremoso e envolvente.<br /><br />
+                  Feito com um toque especial de creme de leite, champignons e o
+                  tradicional ketchup, esse prato traz o sabor caseiro que você
+                  adora, mas com a praticidade de uma refeição rápida e
+                  saborosa.<br /><br />
+                  Acompanhado por uma porção generosa de arroz soltinho e batata
+                  palha crocante, o <strong>Strogobox</strong> é a escolha ideal
+                  para quem busca conforto e sabor em cada garfada.<br /><br />
+                  <strong>Quantidades:</strong><br />
+                  Arroz: 200g;<br />
+                  Strogonoff: 2500g;<br />
+                  Batata Palha: 30g;
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old"></span>
+                    <span class="pricePromo inPromo">R$19.90</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="food-item"
+              data-id="clas-strogo-car"
+              data-tags="carnes strogonoff strogobox classico"
+            >
+              <img
+                src="assets/rest-assets/thumb-alcatra.png"
+                alt="Strogobox Alcatra"
+              />
+              <div class="food-details">
+                <h3>Clássico Strogobox Alcatra</h3>
+                <p>
+                  Para os amantes de carne, o
+                  <strong>Strogobox de Alcatra</strong> traz pedaços macios e
+                  suculentos de alcatra, perfeitamente cozidos em um molho
+                  cremoso e saboroso.<br /><br />
+                  A combinação de creme de leite, champignons e o tradicional
+                  ketchup garante o toque especial que transforma esse prato em
+                  uma verdadeira experiência de sabor.<br /><br />
+                  Servido com arroz soltinho e batata palha crocante, o
+                  <strong>Strogobox de Alcatra</strong> é a escolha perfeita
+                  para quem quer saborear um clássico irresistível e prático.<br /><br />
+                  <strong>Quantidades:</strong><br />
+                  Arroz: 200g;<br />
+                  Strogonoff: 250g;<br />
+                  Batata Palha: 30g;
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old">R$29.90</span>
+                    <span class="pricePromo inPromo">R$24.90</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="Extras">
+            <!-- Adicionar aqui classe e abaixo Header2 -->
+            <h2 class="foodtype-header-section">Extras</h2>
+            <article
+              class="food-item"
+              data-id="extra-batata"
+              data-tags="batata palha extra adicional"
+            >
+              <img
+                src="assets/rest-assets/thumb extra batata palha.png"
+                alt="Batata Palha Extra"
+              />
+              <div class="food-details">
+                <h3>Batata Palha Elma Chips 30g</h3>
+                <p>
+                  Para aqueles que gostam de fartura!
+                  <strong>Patata Palha Elma Chips Extra</strong>, <br /><br />
+                  Acompanhando esse delicioso strogonoff com arroz branco
+                  soltinho!
+                  <br /><br /><strong>Quantidades:</strong><br />
+                  Batata Palha Elma Chips: 30g;
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old">R$3.00</span>
+                    <span class="pricePromo inPromo">R$2.00</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="Bebidas">
+            <!-- Adicionar aqui classe e abaixo Header2 -->
+            <h2 class="foodtype-header-section">Bebidas</h2>
+            <article
+              class="food-item"
+              data-id="coca-200"
+              data-tags="refrigerante bebidas coca cola"
+            >
+              <img
+                src="https://static.paodeacucar.com/img/uploads/1/48/24603048.jpg"
+                alt="Coca-Cola 200ml"
+              />
+              <div class="food-details">
+                <h3>Coca-Cola "coquinha" 200ml</h3>
+                <p>
+                  Refresque-se com a clássica <strong>Coca-Cola</strong>,
+                  perfeita para acompanhar qualquer refeição! Uma garrafinha de
+                  200ml para você matar a sede e aproveitar o sabor
+                  inconfundível que todos amam.
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old"></span>
+                    <span class="pricePromo inPromo">R$4.00</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="food-item"
+              data-id="coca-200"
+              data-tags="refrigerante bebidas coca cola"
+            >
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnhH9mzOaNmuC0-vCBecyMiQmGEgMVLiGTfMjIM5w6z8vo8wmjR3-C7P4yVVcqCi_id0&usqp=CAU"
+                alt="Coca-Cola 200ml"
+              />
+              <div class="food-details">
+                <h3>Coca-Cola "coquinha" Zero 200ml</h3>
+                <p>
+                  Refresque-se com a clássica
+                  <strong>Coca-Cola Zero Açucar</strong>, perfeita para
+                  acompanhar qualquer refeição! Uma lata de 200ml para você
+                  matar a sede e aproveitar o sabor inconfundível que todos
+                  amam.
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old"></span>
+                    <span class="pricePromo inPromo">R$4.00</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article
+              class="food-item"
+              data-id="pepsi-200"
+              data-tags="refrigerante bebidas pepsi"
+            >
+              <img
+                src="https://bretas.vtexassets.com/arquivos/ids/191852-800-auto?v=638375518020330000&width=800&height=auto&aspect=true"
+                alt="pepsi 200ml"
+              />
+              <div class="food-details">
+                <h3>Pepsi "mini" 200ml</h3>
+                <p>
+                  Refresque-se com a clássica <strong>Pepsi</strong>, perfeita
+                  para acompanhar qualquer refeição! Uma garrafinha de 200ml
+                  para você matar a sede e pode ser!
+                </p>
+                <div class="food-footer">
+                  <div>
+                    <span class="price Old"></span>
+                    <span class="pricePromo inPromo">R$3.50</span>
+                    <!-- Preço promocional com a classe inPromo -->
+                  </div>
+                  <div class="icons">
+                    <!-- <button class="fav-btn">
+                      <i class="fa-regular fa-heart"></i>
+                    </button> -->
+                    <button class="add-btn">
+                      <i class="fa-solid fa-hand-point-up"></i>
+                      <span class="item-count">0</span>
+                      <!-- Bolinha de contagem -->
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+      </section>
+      <!-- ----------------PAGE - LIKES -------- -->
+      <section class="page-likes" data-page="page-likes">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-top">
+            <a class="menu-btn"
+              ><img src="/assets/logo-beta-white.png" alt="mini-logo"
+            /></a>
+            <p class="location">
+              <span class="status-dot"></span><span>StrogoBox</span>📍 Sepetiba,
+              Rio de Janeiro - RJ
+            </p>
+            <div class="user-avatar">
+              <a
+                href="#home"
+                class="avatar-btn"
+                onclick="navigateTo('home'); return false;"
+                ><img
+                  src="assets/rest-assets/rest-logos/strogobox.png"
+                  alt="User Avatar"
+              /></a>
+            </div>
+          </div>
+        </header>
+        <section class="main-sec">
+          <div class="title-wrap"><h1>Seus pratos/itens preferidos:</h1></div>
+        </section>
+        <section class="food-list">
+          <!-- adicionar aqui os favoritos gerados por JS -->
+        </section>
+      </section>
+
+      <!-- ----------------PAGE - COUPONS -------- -->
+      <section class="page-coupons" data-page="page-coupons">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-top">
+            <a class="menu-btn"
+              ><img src="/assets/logo-beta-white.png" alt="mini-logo"
+            /></a>
+            <p class="location">
+              <span class="status-dot"></span><span>StrogoBox</span>📍 Sepetiba,
+              Rio de Janeiro - RJ
+            </p>
+            <div class="user-avatar">
+              <a
+                href="#home"
+                class="avatar-btn"
+                onclick="navigateTo('home'); return false;"
+                ><img
+                  src="assets/rest-assets/rest-logos/strogobox.png"
+                  alt="User Avatar"
+              /></a>
+            </div>
+          </div>
+        </header>
+
+        <section class="main-sec">
+          <div class="title-wrap">
+            <h1>Cupons disponíveis <br />neste restaurante:</h1>
+          </div>
+        </section>
+
+        <!-- Lista de Cupons -->
+        <section class="coupon-list">
+          <article
+            class="coupon-wrap"
+            data-coupon-type="free"
+            data-item="Refri Grátis"
+            data-code="PAGOCOMPIX"
+          >
+            <div class="coupon">
+              <div class="coupon-front">
+                <div class="coupon-image">
+                  <img
+                    src="https://i.pinimg.com/736x/3c/7a/80/3c7a80184f739c8157ea7882af86333f.jpg"
+                    alt="Imagem do Cupom"
+                  />
+                </div>
+                <div class="coupon-content">
+                  <div class="text-wrap">
+                    <h2>PIX = Bebida Grátis 🤑</h2>
+                    <p>
+                      Use este cupom E pague por PIX. PRONTO! Ganhe um refri da sua
+                      escolha.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="coupon-wrap"
+            data-coupon-type="free"
+            data-item="StrogoBox Grátis"
+            data-code="STROGOGRATIS"
+          >
+            <div class="coupon">
+              <div class="coupon-front">
+                <div class="coupon-image">
+                  <img
+                    src="assets/rest-assets/strogo.jpg"
+                    alt="Imagem do Cupom"
+                  />
+                </div>
+                <div class="coupon-content">
+                  <div class="text-wrap">
+                    <h2>StrogoBox Grátis 🆓</h2>
+                    <p>
+                      Este cupom te dá direito a um StrogoBox Grátis
+                      <strong>na compra de 3 Strogobox de qualquer sabor</strong
+                      >.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <!-- ----------------PAGE - order -------- -->
+      <section class="page-order" data-page="page-order">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-top">
+            <a class="menu-btn"
+              ><img src="/assets/logo-beta-white.png" alt="mini-logo"
+            /></a>
+            <p class="location">
+              <span class="status-dot"></span><span>StrogoBox</span>📍 Sepetiba,
+              Rio de Janeiro - RJ
+            </p>
+            <div class="user-avatar">
+              <a
+                href="#home"
+                class="avatar-btn"
+                onclick="navigateTo('home'); return false;"
+                ><img
+                  src="assets/rest-assets/rest-logos/strogobox.png"
+                  alt="User Avatar"
+              /></a>
+            </div>
+          </div>
+        </header>
+        <section class="main-sec">
+          <div class="title-wrap">
+            <h1>Seu recibo <br />do pedido atual:</h1>
+          </div>
+        </section>
+        <!-- order -->
+        <section class="order-sumary">
+          <div class="header-order">
+            <p>Restaurante StrogoBox</p>
+            <p>(21) 98361-7054</p>
+            <p>Sepetiba, Rio de Janeiro - RJ</p>
+          </div>
+          <ul class="itens"></ul>
+          <div class="total-order">
+            <p><strong>TOTAL:</strong></p>
+            <p class="total-int">R$ 0.00</p>
+          </div>
+        </section>
+        <section class="coupon-area">
+          <div class="add">
+            <h2>Escolheu um cupom?</h2>
+            <div class="input-area" id="code-data">
+              <input type="text" placeholder="Digite o código" />
+              <button type="submit" id="apply-coupon-btn">Aplicar</button>
+            </div>
+          </div>
+        </section>
+        <section class="send-order-area">
+          <div class="order-controls-wrap">
+            <p class="cancel-button">Cancelar Ordem</p>
+            <button class="wpp-button">
+              <i class="fa-brands fa-whatsapp"></i> Enviar Ordem
+            </button>
+          </div>
+        </section>
+      </section>
+      <!-- Footer Navigation -->
+      <footer class="footer-nav">
+        <button onclick="navigateTo('home')">
+          <i class="fa-solid fa-house"></i>
+        </button>
+        <!-- <button onclick="navigateTo('likes')">
+          <i class="fa-solid fa-heart"></i>
+        </button> -->
+        <button onclick="navigateTo('coupons')">
+          <i class="fa-solid fa-ticket"></i>
+        </button>
+        <button onclick="navigateTo('order')">
+          <i class="fa-solid fa-receipt"></i>
+        </button>
+      </footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script
+      src="https://kit.fontawesome.com/7bcd463992.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/digital-menu-handle.js"></script>
+    <script src="js/coupons-handle.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/dishes-handle.js"></script>
+    <script src="js/order-handle.js"></script>
+  </body>
+</html>
+
+<!-- Variável do "Nome do restaurante" -> (.location span) -->
+<!-- Variável do "Endereço do restaurante" -> (.location) -->
+<!-- Variável da "Imagem do banner" -> (.background-img) -->
+<!-- Variável da "Imagem principal do restaurante" -> (.foreground-img) -->
+<!-- Variável do "Texto principal do banner" -> (.banner-content h1) -->
+<!-- Variável da "Descrição do produto principal" -> (.banner-content p) -->
+<!-- Variável do "Ícone de categoria (petiscos)" -> (.tabs-box li:nth-child(1) img) -->
+<!-- Variável do "Ícone de categoria (frangos)" -> (.tabs-box li:nth-child(2) img) -->
+<!-- Variável da "Imagem do prato (Strogobox de Frango)" -> (.food-item[data-id='clas-strogo-fr'] img) -->
+<!-- Variável do "Nome do prato (Strogobox de Frango)" -> (.food-item[data-id='clas-strogo-fr'] h3) -->
+<!-- Variável da "Descrição do prato (Strogobox de Frango)" -> (.food-item[data-id='clas-strogo-fr'] p) -->
+<!-- Variável do "Preço antigo do prato (Strogobox de Frango)" -> (.food-item[data-id='clas-strogo-fr'] .price.Old) -->
+<!-- Variável do "Preço promocional do prato (Strogobox de Frango)" -> (.food-item[data-id='clas-strogo-fr'] .pricePromo.inPromo) -->
+<!-- Variável da "Imagem do prato (Strogobox de Alcatra)" -> (.food-item[data-id='clas-strogo-car'] img) -->
+<!-- Variável do "Nome do prato (Strogobox de Alcatra)" -> (.food-item[data-id='clas-strogo-car'] h3) -->
+<!-- Variável da "Descrição do prato (Strogobox de Alcatra)" -> (.food-item[data-id='clas-strogo-car'] p) -->
+<!-- Variável do "Preço antigo do prato (Strogobox de Alcatra)" -> (.food-item[data-id='clas-strogo-car'] .price.Old) -->
+<!-- Variável do "Preço promocional do prato (Strogobox de Alcatra)" -> (.food-item[data-id='clas-strogo-car'] .pricePromo.inPromo) -->
+<!-- Variável da "Imagem da bebida (Coca-Cola Lata)" -> (.food-item[data-id='coca-lata'] img) -->
+<!-- Variável do "Nome da bebida (Coca-Cola Lata)" -> (.food-item[data-id='coca-lata'] h3) -->
+<!-- Variável da "Descrição da bebida (Coca-Cola Lata)" -> (.food-item[data-id='coca-lata'] p) -->
+<!-- Variável do "Preço antigo da bebida (Coca-Cola Lata)" -> (.food-item[data-id='coca-lata'] .price.Old) -->
+<!-- Variável do "Preço promocional da bebida (Coca-Cola Lata)" -> (.food-item[data-id='coca-lata'] .pricePromo.inPromo) -->
