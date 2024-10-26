@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
     />
         <p>Use o código PIX abaixo:</p>
         <div class="pix-code-container">
-          <input type="text" id="pix-code" value="00020126360014...1315" readonly>
+          <input type="text" id="pix-code" value="69e3f53c-89aa-41a7-8e46-189c0f5e82b8" readonly>
           <button class="copy-pix">Copiar</button>
         </div>
         <p>Você pagará para: <br><strong>Patricia Pessoa Paixão</strong><br><strong>Banco C6 SA</strong><br>Valor de <strong>R$${totalPagar.toFixed(2)}</strong>.</p>
