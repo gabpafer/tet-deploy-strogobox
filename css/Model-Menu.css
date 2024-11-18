@@ -111,7 +111,7 @@ body::-webkit-scrollbar {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: red;
+  background-color: limegreen;
   animation: blink 1.2s infinite;
 }
 
@@ -121,7 +121,7 @@ body::-webkit-scrollbar {
     background-color: rgba(128, 128, 128, 0.182);
   }
   50% {
-    background-color: red;
+    background-color: limegreen;
   }
 }
 
@@ -1176,6 +1176,10 @@ body::-webkit-scrollbar {
 .popup-pay .pay-cash {
   background-color: #f44336; /* Vermelho */
   color: white;
+}
+.popup-pay .pay-cash .payment-details{
+  font-size: .7rem;
+  font-weight: 300;
 }
 
 .popup-pay .pay-cash:hover {
