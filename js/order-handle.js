@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>Pagar agora via Pix?</p>
         <div class="popup-pay-actions">
           <button class="pay-pix">Pagar por PIX</button>
-          <button class="pay-cash">Na Entrega</button>
+          <button class="pay-cash">Na Entrega <span class="payment-details">(Débito/Crédito/Pix/Dinheiro)</span></button>
           <button class="popup-pay-cancel">Cancelar</button>
         </div>
       </div>
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <input type="text" id="pix-code" value="69e3f53c-89aa-41a7-8e46-189c0f5e82b8" readonly>
           <button class="copy-pix">Copiar</button>
         </div>
-        <p>Você pagará para: <br><strong>Patricia Pessoa Paixão</strong><br><strong>Banco C6 SA</strong><br>Valor de <strong>R$${totalPagar.toFixed(2)}</strong>.</p>
+        <p>Você pagará para: <br><strong>Patricia Pessoa Paixão</strong><br><strong>Banco Nubank</strong><br>Valor de <strong>R$${totalPagar.toFixed(2)}</strong>.</p>
         <small>Coloque o valor correto, por gentileza e, após efetuar o pagamento clique em <strong>Confirmar</strong>.</small>
         <div class="popup-pay-actions">
           <button class="popup-pay-confirm">Confirmar</button>
